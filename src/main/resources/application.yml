@@ -1,0 +1,36 @@
+server:
+  port: 8089
+
+spring:
+  h2:
+    console:
+      enabled: true
+
+  datasource:
+    url: jdbc:h2:tcp://localhost/~/jwt
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        format_sql: true
+        show_sql: true
+    defer-datasource-initialization: true
+
+  sql:
+    init:
+      mode: always
+
+logging:
+  level:
+    thisis.joos: DEBUG
+
+jwt:
+  header: Authorization
+  secret: SWYteW91LWhhdmUtZ29vZC10aG91Z2h0cy10aGV5LXdpbGwtc2hpbmUtb3V0LW9mLXlvdXItZmFjZS1saWtlLXN1bmJlYW1zLUFuZC15b3Utd2lsbC1hbHdheXMtbG9vay1sb3ZlbHk=
+  token-validity-in-seconds: 86400
